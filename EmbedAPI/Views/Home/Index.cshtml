@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>My Dashboard</h1>
+    <p class="lead">The Google Analytics Embed API in Action</p>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div id="auth-container"></div>
+    </div>
+
+    <div class="col-md-12" id="vis-type-selector">
+        <h2>Add a Chart or Table</h2>
+        <div>
+            <label for="vis-type-select">Visualization Type:</label>
+            <select id="vis-type-select">
+                <optgroup label="charts">
+                    <option value="LINE">Line</option>
+                    <option value="COLUMN">Column</option>
+                    <option value="BAR">Bar</option>
+                    <option value="GEO">Geo Map</option>
+                </optgroup>
+                <optgroup label="data">
+                    <option value="TABLE">Table</option>
+                </optgroup>
+                <optgroup label="real-time">
+                    <option value="REALTIME-ACTIVEUSERS">Active Users</option>
+                    <option value="REALTIME-TOTALEVENTS">Total Events</option>
+                </optgroup>
+                <optgroup label="custom analysis">
+                    <option value="ANALYSIS">7 Day Average</option>
+                </optgroup>
+                <optgroup label="custom chart">
+                    <option value="DONUT">Donut</option>
+                </optgroup>
+            </select>
+            <button id="addChart">Add</button>
+        </div>
+    </div>
+
+    <div id="chart-container"></div>
+
+</div>
+
+
+@section scripts
+{
+<script src="~/Scripts/knockout-3.2.0.debug.js"></script>
+@*<script src="~/Scripts/EmbedAPI/viewSelector2.js"></script>*@
+ <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script src="~/Scripts/indexViewModel.js"></script>
+}
